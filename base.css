@@ -1,0 +1,116 @@
+/* base.css */
+body, html {
+    height: 100%; /* или min-height: 100%; */
+    margin: 0;
+    padding-top: 30px;
+    font-family: 'Arial', sans-serif;
+
+    color: #333;
+    transition: all 0.3s ease;
+}
+body {
+    display: flex;
+    flex-direction: column; /* Ориентация столбцом */
+    justify-content: space-between; /* Распределяет пространство между элементами */
+}
+
+a {
+    display: flex;
+    text-decoration: none;
+    color: #333;
+    align-items: center;
+    text-align: center;
+}
+
+button {
+    background-color: #5C67F2;
+    color: white;
+    border: none;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    align-items: center;
+    
+}
+
+button:hover {
+    background-color: #4e56c1;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-area {
+    display: flex;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.userprofile{
+    padding-top: 10px;
+}
+
+/* Стили для профиля пользователя */
+.profile-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.profile-card h2 {
+    margin-top: 0;
+}
+
+/* Стили для заказов */
+.styled-order-list {
+    list-style: none;
+    padding: 0;
+}
+
+.order-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.order-card h3 {
+    margin-top: 0;
+}
+
+
+.high-contrast {
+    color: black; /* Цвет текста */
+    background-color: white; /* Цвет фона */
+    border-color: black; /* Цвет границ */
+}
+.font-large {
+    font-size: 150%; /* Увеличиваем шрифт на 50% */
+}
+body.night-mode {
+    color: #564e4e;
+    background-color: #121212;
+}
+main.night-mode {
+    color: #564e4e;
+    background-color: #121212;
+}
+
+
+/* Переключатель режимов */
+#toggleThemeButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    
+}

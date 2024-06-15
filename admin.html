@@ -1,0 +1,98 @@
+<!-- admin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <h1>Админ панель</h1>
+    <form action="/productsAdd" method="post" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Название" required>
+        <textarea name="description" placeholder="Описание" required></textarea>
+        <input type="number" name="price" placeholder="цена" required>
+        <input type="number" name="stock" placeholder="Количество" required>
+        <input type="file" name="image" required>
+        <label>Категория</label>
+        <select name="category">
+            <option value="Для игр">Для игр</option>
+            <option value="Для офиса">Для офиса</option>
+            <!-- Дополнительные категории -->
+        </select>
+
+        <label>Диагональ</label>
+        <select name="screen_size">
+            <option value="24">24"</option>
+            <option value="27">27"</option>
+            <!-- Дополнительные размеры -->
+        </select>
+
+        <label>Максимальное разрешение</label>
+        <select name="resolution">
+            <option value="1920x1080">1920x1080</option>
+            <option value="2560x1440">2560x1440</option>
+            <option value="3840x2160">3840x2160</option>
+            <!-- Дополнительные разрешения -->
+        </select>
+
+        <label>Частота обновления экрана</label>
+        <select name="refresh_rate">
+            <option value="60">60 Гц</option>
+            <option value="120">120 Гц</option>
+            <option value="144">144 Гц</option>
+            <option value="240">240 Гц</option>
+            <!-- Дополнительные частоты -->
+        </select>
+
+        <label>Время отклика</label>
+        <select name="response_time">
+            <option value="1">1 мс</option>
+            <option value="4">4 мс</option>
+            <option value="5">5 мс</option>
+            <!-- Дополнительные времена отклика -->
+        </select>
+
+        <label>Тип матрицы</label>
+        <select name="panel_type">
+            <option value="IPS">IPS</option>
+            <option value="TN">TN</option>
+            <option value="VA">VA</option>
+            <!-- Дополнительные типы матриц -->
+        </select>
+
+        <button type="submit">Добавить</button>
+    </form>
+    <!-- В admin.html -->
+    <h2>Лист товаров</h2>
+    <ul id="productList"></ul>
+    <!-- Модальное окно для редактирования товара -->
+    <div id="editProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editProductModal')">&times;</span>
+            <h2>Изменить товар</h2>
+            <form id="editProductForm" onsubmit="submitEditProduct(event)">
+                <input type="hidden" id="editProductId">
+                <label for="editProductName">Название:</label>
+                <input type="text" id="editProductName" name="name" required>
+                <label for="editProductDescription">Описание:</label>
+                <textarea id="editProductDescription" name="description" required></textarea>
+                <label for="editProductPrice">Цена:</label>
+                <input type="number" id="editProductPrice" name="price" required>
+                <label for="editProductStock">Количество:</label>
+                <input type="number" id="editProductStock" name="stock" required>
+                <label for="editProductImage">Картинка:</label>
+                <input type="file" id="editProductImage" name="image">
+                <button type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    
+
+    
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

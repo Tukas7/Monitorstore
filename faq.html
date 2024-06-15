@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Store</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="/">Monitor Store</a></h1>
+            <nav>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="choose.html">Как выбрать</a></li>
+                    <li><a href="calibration.html">Калибровка</a></li>  
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <button onclick="toggleAccessibilityFeatures()">Режим для слабовидящих</button>
+                    <button id="toggleThemeButton">Ночной режим</button>
+                </ul>
+                <div class = "UserAut" id="login-register">
+                    <button onclick="showRegistrationForm()">Зарегистрироваться</button>
+                    <button onclick="showLoginForm()">Войти</button>
+                </div>
+                <div class="userprofile" id="user-profile" style="display:none;">
+                    <span id="user-name-display"></span>
+                    <button onclick="showUserProfile()">Мой Профиль</button>
+                    <button id="cartButton" onclick="showCart()">Корзина (<span id="cartCount">0</span>)</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="main-content">
+    <main>
+        <div class="faqq"></div>
+        <h1>Часто задаваемые вопросы</h1>
+        <div class="faq-section">
+            <h2>Настройка и калибровка монитора</h2>
+            <div class="faq">
+                <button class="question">Как откалибровать монитор для получения наилучших цветов?</button>
+                <div class="answer">Используйте инструмент калибровки монитора или стороннее программное обеспечение. Отрегулируйте яркость, контраст и цветовые настройки для достижения наиболее точной цветопередачи.</div>
+
+                <button class="question">Какая идеальная настройка яркости?</button>
+                <div class="answer">Установите яркость на комфортный уровень, который обеспечивает четкость без напряжения глаз, обычно между 50% и 70%.</div>
+            </div>
+        </div>
+        <div class="faq-section">
+            <h2>Особенности монитора</h2>
+            <div class="faq">
+                <button class="question">Что означает HDR и как его включить?</button>
+                <div class="answer">HDR означает широкий динамический диапазон. Включите его через меню настроек монитора или настройки дисплея на компьютере, если поддерживается.</div>
+
+                <button class="question">Каковы преимущества IPS-панели перед TN-панелью?</button>
+                <div class="answer">IPS-панели предлагают лучшую цветопередачу и более широкие углы обзора по сравнению с TN-панелями.</div>
+            </div>
+        </div>
+        <div class="faq-section">
+            <h2>Устранение неполадок</h2>
+            <div class="faq">
+                <button class="question">Почему экран периодически мерцает?</button>
+                <div class="answer">Это может быть связано с ослабленными кабелями, устаревшими драйверами или проблемами с питанием. Проверьте соединения и обновите драйверы дисплея.</div>
+
+                <button class="question">Как исправить эффекты ореола на экране?</button>
+                <div class="answer">Уменьшите время отклика, используйте более высокую частоту обновления или включите ускорение, если монитор поддерживает эту функцию.</div>
+            </div>
+        </div>
+        <div class="faq-section">
+            <h2>Игровые мониторы</h2>
+            <div class="faq">
+                <button class="question">Какая частота обновления оптимальна для игр?</button>
+                <div class="answer">Минимальная приемлемая частота - 60 Гц, но игроки обычно предпочитают 120 Гц и выше для более плавного игрового процесса.</div>
+
+                <button class="question">Чем различаются G-Sync и FreeSync?</button>
+                <div class="answer">G-Sync - это технология NVIDIA, а FreeSync - AMD. Обе уменьшают разрывы изображения, синхронизируя частоту обновления между монитором и графическим процессором.</div>
+            </div>
+        </div>
+        <div class="faq-section">
+            <h2>Мониторы для производительности</h2>
+            <div class="faq">
+                <button class="question">На какие функции стоит обратить внимание в мониторе для производительности?</button>
+                <div class="answer">Обратите внимание на высокое разрешение, эргономичность, множество портов и отсутствие мерцания для долгих часов работы.</div>
+
+                <button class="question">Как сверхширокие мониторы повышают производительность?</button>
+                <div class="answer">Сверхширокие мониторы обеспечивают больше рабочего пространства, позволяя эффективно многозадачить и уменьшая потребность в нескольких экранах.</div>
+            </div>
+        </div>
+        <div class="faq-section">
+            <h2>Проблемы с подключением</h2>
+            <div class="faq">
+                <button class="question">Почему мой кабель HDMI не работает?</button>
+                <div class="answer">Убедитесь, что кабель полностью вставлен. Попробуйте другой порт или кабель, и проверьте настройки устройства.</div>
+
+                <button class="question">Как подключить несколько мониторов к одному компьютеру?</button>
+                <div class="answer">Используйте доступные порты на вашей видеокарте или док-станции. Настройте параметры отображения для распознавания мониторов.</div>
+            </div>
+        </div>
+    </div>
+    </main>
+    </div>
+    
+    
+
+    
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+
+
+
+    
+    <div id="loginForm" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModallogin()">&times;</span>
+            <form onsubmit="login(event)">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="registerForm" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModalReg()">&times;</span>
+            <form onsubmit="register(event)">
+                <input type="text" id="register-username" placeholder="Username" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="userProfile" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModalProf()">&times;</span>
+            <h2>Профиль</h2>
+            <div id="userInfo"></div>
+            <button onclick="editUserProfile()">Изменить профиль</button>
+            <h3>История заказов</h3>
+            <ul id="orderHistory"></ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+            document.querySelectorAll('.question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="about">
+                <h4>О нас</h4>
+                <p>Мы предлагаем качественные мониторы и аксессуары для работы и развлечений. Свяжитесь с нами для получения поддержки.</p>
+            </div>
+            <div class="links">
+                <h4>Полезные ссылки</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="catalog.html">Продукция</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h4>Контакты</h4>
+                <ul>
+                    <li>Телефон: +7 123 456 7890</li>
+                    <li>Email: support@monitorstore.com</li>
+                    <li>Адрес: ул. Ленина, д. 1, Тюмень</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Monitor Store. Все права защищены.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('toggleThemeButton');
+    
+    // Проверяем, есть ли сохраненный режим в localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.classList.add(savedTheme);
+        button.textContent = savedTheme === 'night-mode' ? 'День' : 'Ночь';
+    }
+
+    // Обработчик переключения режима
+    button.addEventListener('click', () => {
+        const isNightMode = document.body.classList.toggle('night-mode');
+        button.textContent = isNightMode ? 'День' : 'Ночь';
+
+        // Сохраняем выбор в localStorage
+        localStorage.setItem('theme', isNightMode ? 'night-mode' : '');
+    });
+});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Store</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="/">Monitor Store</a></h1>
+            <nav>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="choose.html">Как выбрать</a></li>
+                    <li><a href="calibration.html">Калибровка</a></li>  
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <button onclick="toggleAccessibilityFeatures()">Режим для слабовидящих</button>
+                    <button id="toggleThemeButton">Ночной режим</button>
+                </ul>
+                <div class = "UserAut" id="login-register">
+                    <button onclick="showRegistrationForm()">Зарегистрироваться</button>
+                    <button onclick="showLoginForm()">Войти</button>
+                </div>
+                <div class="userprofile" id="user-profile" style="display:none;">
+                    <span id="user-name-display"></span>
+                    <button onclick="showUserProfile()">Мой Профиль</button>
+                    <button id="cartButton" onclick="showCart()">Корзина (<span id="cartCount">0</span>)</button>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Добро пожаловать в Monitor Store!</h1>
+            <p>Ваш источник лучших мониторов для дома и офиса.</p>
+            <button onclick="location.href='catalog.html';">Посмотреть каталог</button>
+        </section>
+        <section class="featured-products">
+            <h2 class="h2fetured">Популярные товары</h2>
+            <div class="product-grid">
+                <article class="product" data-id="1015">
+                    <img src="uploads/img/1.jpg" alt="Product 1">
+                    <h3>WQHD монитор MSI MAG 274QRFW</h3>
+                    <p class="pfetured">40 990 ₽</p>
+                    <button data-id="1015" class="add-to-cart-btn">Добавить в корзину</button>
+                </article>
+                <article class="product" data-id="1016">
+                    <img src="uploads/img/2.jpg" alt="Product 13">
+                    <h3>WQHD монитор ASUS ROG Swift PG27AQN</h3>
+                    <p>147 990 ₽</p>
+                    <button data-id="1016" class="add-to-cart-btn">Добавить в корзину</button>
+                </article>
+                <article class="product" data-id="1017">
+                    <img src="uploads/img/3.jpg" alt="Product 13">
+                    <h3>WQHD монитор Dell Alienware AW2723DF</h3>
+                    <p>78 990 ₽</p>
+                    <button data-id="1017" class="add-to-cart-btn">Добавить в корзину</button>
+                </article>
+                <article class="product" data-id="1018">
+                    <img src="uploads/img/4.jpg" alt="Product 13">
+                    <h3>4К монитор LG UltraGear 27GR93U-B</h3>
+                    <p>59 990 ₽</p>
+                    <button data-id="1018" class="add-to-cart-btn">Добавить в корзину</button>
+                </article>
+            </div>
+        </section>
+        <section class="about">
+            <h2>О нас</h2>
+            <p>Monitor Store — ваш надежный поставщик мониторов. Мы предлагаем широкий ассортимент продукции для геймеров, профессионалов и домашнего использования.</p>
+            <button><a href="catalog.html", style="color: white;">Товары</a></button>
+        </section>
+        <section class="features">
+            <div class="container">
+                <article class="feature">
+                    <img src="uploads/minusy-onlain-shopinga.jpg" alt="Быстрая доставка">
+                    <h3>Быстрая доставка</h3>
+                    <p>Получите ваш заказ быстро и без проблем в любую точку страны.</p>
+                </article>
+                <article class="feature">
+                    <img src="uploads/kisspng-guarantee-wa.png" alt="Гарантия">
+                    <h3>Гарантия качества</h3>
+                    <p>Все наши товары сертифицированы и имеют гарантию производителя.</p>
+                </article>
+                <article class="feature">
+                    <img src="uploads/QZ7cKEsspkE.jpg" alt="Поддержка">
+                    <h3>Круглосуточная поддержка</h3>
+                    <p>Наша служба поддержки всегда готова помочь вам в любое время дня и ночи.</p>
+                </article>
+            </div>
+        </section>
+        
+    </main>
+    <!-- Модальное окно для деталей товара -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="Изображение товара" style="width:100%;">
+            <p id="modalPrice"></p>
+            <p id="modalDescription"></p>
+            <ul id="modalSpecifications"></ul>
+            <button id="add-to-cart-btn" data-id="">Добавить в корзину</button>
+        </div>
+    </div>
+
+
+    
+
+
+
+    
+        
+        
+    
+
+
+
+
+
+
+
+
+
+    
+    <div id="loginForm" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModallogin()">&times;</span>
+            <form onsubmit="login(event)">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="registerForm" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModalReg()">&times;</span>
+            <form onsubmit="register(event)">
+                <input type="text" id="register-username" placeholder="Username" required>
+                <input type="email" id="register-email" placeholder="Email" required>
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="userProfile" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModalProf()">&times;</span>
+            <h2>Профиль</h2>
+            <div id="userInfo"></div>
+            <button onclick="editUserProfile()">Изменить профиль</button>
+            <h3>История заказов</h3>
+            <ul id="orderHistory"></ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="about">
+                <h4>О нас</h4>
+                <p>Мы предлагаем качественные мониторы и аксессуары для работы и развлечений. Свяжитесь с нами для получения поддержки.</p>
+            </div>
+            <div class="links">
+                <h4>Полезные ссылки</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="catalog.html">Продукция</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h4>Контакты</h4>
+                <ul>
+                    <li>Телефон: +7 123 456 7890</li>
+                    <li>Email: support@monitorstore.com</li>
+                    <li>Адрес: ул. Ленина, д. 1, Тюмень</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Monitor Store. Все права защищены.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('toggleThemeButton');
+    
+    // Проверяем, есть ли сохраненный режим в localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.classList.add(savedTheme);
+        button.textContent = savedTheme === 'night-mode' ? 'День' : 'Ночь';
+    }
+
+    // Обработчик переключения режима
+    button.addEventListener('click', () => {
+        const isNightMode = document.body.classList.toggle('night-mode');
+        button.textContent = isNightMode ? 'День' : 'Ночь';
+
+        // Сохраняем выбор в localStorage
+        localStorage.setItem('theme', isNightMode ? 'night-mode' : '');
+    });
+});
+    </script>
+</body>
+</html>

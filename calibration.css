@@ -1,0 +1,67 @@
+main {
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Подключаем современный шрифт */
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #ffffff; /* Светлый фон для читаемости */
+    border-left: 5px solid #0056b3; /* Изменение основного цвета на более темный оттенок синего */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Добавляем тень для объемности */
+}
+
+h1, h2, h3 {
+    color: #0056b3; /* Синий цвет для заголовков */
+    margin-bottom: 10px; /* Добавляем небольшое пространство под заголовками */
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px; /* Увеличиваем отступ сверху */
+    border-radius: 8px; /* Скругляем углы изображения */
+}
+
+/* Стили для шагов */
+.step {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f1f1f1; /* Светло-серый фон для разделения шагов */
+    border: 1px solid #d1d1d1; /* Тонкая граница вокруг шага */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Более заметная тень */
+    transition: all 0.3s ease; /* Плавный переход всех свойств */
+}
+
+.step:hover {
+    transform: translateY(-5px); /* Уменьшаем подъем для более тонкой анимации */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Увеличиваем тень при наведении */
+}
+
+/* Стили для подсказок */
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    width: calc(100% - 40px); /* Уменьшаем ширину для красивого отступа */
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 12px; /* Увеличиваем padding для большего пространства внутри */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease; /* Плавный переход всех свойств */
+    visibility: hidden;
+}
+
+.step:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-5px); /* Уменьшаем смещение вверх для тонкой анимации */
+}
