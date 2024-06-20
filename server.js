@@ -1,9 +1,9 @@
 const cors = require('cors');
-const sql = require('mssql/msnodesqlv8');
+const sql = require('mssql');
 const express = require('express');
 const multer = require('multer');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8001;
 const path = require('path');
 app.use(express.json()); // Для разбора JSON-форматированных тел запросов
 app.use(cors()); // Для обработки CORS-запросов, если фронтенд будет на другом домене
@@ -18,18 +18,16 @@ app.listen(port, () => {
 
 app.use(express.static(path.join(__dirname)));
 const config = {
-    user: 'Ilusha', // Имя пользователя для SQL Server
-    password: 'qwerty123321F', // Пароль пользователя для SQL Server
+    user: 'Ilusha',
+    password: 'qwerty123321F',
+    server: '92.53.107.236',
     database: 'MonitorStore',
-    server: '92.53.107.236', // IP-адрес или доменное имя удаленного сервера
-    port: 1433, // Порт, на котором SQL Server слушает (по умолчанию 1433)
-    driver: 'msnodesqlv8',
+    
     options: {
-        
-        enableArithAbort: true
-      
-      }
-  };
+        encrypt: true,
+        trustServerCertificate: true // Игнорировать ошибки сертификата
+    }
+};
 
 sql.connect(config)
   .then(() => console.log('Connected to the Database!'))
