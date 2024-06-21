@@ -11,8 +11,8 @@ function fetchProducts() {
             <li>
                 <img src="${product.image_url}" alt="${product.name}" width="100" height="100">
                 ${product.name} - ${product.price}
-                <button onclick="editProduct(${product.id})">Edit</button>
-                <button onclick="deleteProduct(${product.id})">Delete</button>
+                <button onclick="editProduct(${product.id})">Изменить</button>
+                <button onclick="deleteProduct(${product.id})">Удалить</button>
             </li>
         `).join('');
     })
